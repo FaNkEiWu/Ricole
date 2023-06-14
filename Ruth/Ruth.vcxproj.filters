@@ -18,5 +18,13 @@
     <ClCompile Include="src\RuthApp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\rupch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\rupch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

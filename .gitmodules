@@ -1,0 +1,3 @@
+[submodule "Ricole/vendor/spdlog"]
+	path = Ricole/vendor/spdlog
+	url = https://github.com/gabime/spdlog

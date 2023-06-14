@@ -5,7 +5,9 @@
 		#define RICOLE_API __declspec(dllexport)
 	#else
 		#define RICOLE_API __declspec(dllimport)
-	#endif // RC_PLATFORM_WINDOWS
+	#endif
 #else
 	#error Ricole only support Windows!
 #endif // RC_PLATFORM_WINDOWS
+
+#define BIT(x) (1 << x)
