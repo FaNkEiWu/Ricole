@@ -11,6 +11,8 @@
 #include <unordered_map>
 #include <unordered_set>
 
+#include "Ricole/Log.h"
+
 #ifdef RC_PLATFORM_WINDOWS
 	#include <Windows.h>
 #endif

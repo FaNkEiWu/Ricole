@@ -4,6 +4,12 @@ workspace "Ricole"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+-- include directories relative to root folder
+IncludeDir = {}
+IncludeDir["GLFW"] = "Ricole/vendor/GLFW/include"
+
+include "Ricole/vendor/GLFW"
+
 project "Ricole"
     location "Ricole"
     kind "SharedLib"
@@ -19,15 +25,23 @@ project "Ricole"
         "%{prj.name}/src/**.h",
         "%{prj.name}/src/**.cpp"
     }
-
+     
     includedirs {
         "%{prj.name}/src",
-        "%{prj.name}/vendor/spdlog/include"
+        "%{prj.name}/vendor/spdlog/include",
+        "%{IncludeDir.GLFW}"
+    }
+
+    links {
+        "GLFW",
+        "opengl32.lib",
+        "dwmapi.lib"
     }
 
     filter "system:windows"
         cppdialect "C++20"
         staticruntime "On"
+        runtime "Release"
         systemversion "latest"
 
         defines {
@@ -62,7 +76,7 @@ project "Ruth"
     pchheader "rupch.h"
     pchsource "Ruth/src/rupch.cpp"
 
-    files { 
+    files {
         "%{prj.name}/src/**.h",
         "%{prj.name}/src/**.cpp"
     }
@@ -79,6 +93,7 @@ project "Ruth"
     filter "system:windows"
         cppdialect "C++20"
         staticruntime "On"
+        runtime "Release"
         systemversion "latest"
 
         defines {
